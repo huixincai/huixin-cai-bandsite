@@ -63,11 +63,14 @@ header {
     @include desktop;
 }
 
+section {
+    padding: 16px 32px;
+}
+
 .hero {
     background-image: url("../assets/images/hero-bio.jpg");
     background-size: cover;
     height: 66vw;
-    padding: 0 16px;
     display: flex;
     align-items: center;
     color: $white;
@@ -76,7 +79,6 @@ header {
 }
 
 .about {
-    padding: 16px 32px;
 
     .about__header {
         font-size: 44px;
@@ -108,7 +110,6 @@ header {
 }
 
 .photo {
-    padding: 16px 32px;
     background-color: $mercury;
 
     .photo__header {
@@ -161,6 +162,11 @@ header {
             font-size: 25px;
             font-weight: bold;
             padding: 16px 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: $white;
         }
     }
 
