@@ -1,0 +1,14 @@
+@use "./partials/colors" as *;
+@use "./partials/variables" as *;
+@use "./partials/mixins" as *;
+
+@font-face {
+    font-family: "Avenir Next";
+    src: url(../assets/fonts/AvenirNextLTPro.ttf) format("truetype");
+}
+
+html, body, h1, h2 {
+    margin: 0;
+    padding: 0;
+    font-family: Avenir Next;
+}
