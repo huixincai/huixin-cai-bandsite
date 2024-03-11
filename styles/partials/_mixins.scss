@@ -1,13 +1,27 @@
 @use 'variables' as *;
 
+@mixin header {
+    h2 {
+        font-size: 44px;
+        height: 68px;
+        display: inline-block;
+    }
+
+    nav {
+        display: inline-block;
+    }
+}
+
 @mixin tablet {
   @media screen and (min-width: $tablet-breakpoint) {
     @content;
+    @include header;
   }
 }
 
 @mixin desktop {
   @media screen and (min-width: $desktop-breakpoint) {
     @content;
+    @include header;
   }
 }

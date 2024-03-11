@@ -7,8 +7,164 @@
     src: url(../assets/fonts/AvenirNextLTPro.ttf) format("truetype");
 }
 
-html, body, h1, h2 {
+html, body, h1, h2, h3 {
     margin: 0;
     padding: 0;
     font-family: Avenir Next;
+}
+
+header {
+    background-color: $black;
+
+    h2 {
+        height: 35px;
+        font-size: 35px;
+        font-weight: 500;;
+        text-align: center;
+        padding: 15px 0;
+    }
+
+    .navbar__logo a {
+        color: $white;
+        text-decoration: none;
+    }
+
+    nav {
+        font-size: 18px;
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+    
+            li {
+                width: 50%;
+                height: 35px;
+
+                font-size: 20px;
+                font-weight: 600;
+                color: $mercury;
+                text-align: center;
+                &.navbar--active, &:hover {
+                    color: $white;
+                    border-bottom: 4px solid $white;
+                }
+
+                a {
+                    color: inherit;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+
+    @include tablet;
+    @include desktop;
+}
+
+.hero {
+    background-image: url("../assets/images/hero-bio.jpg");
+    background-size: cover;
+    height: 66vw;
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    color: $white;
+    font-size: 38px;
+    font-weight: 600;
+}
+
+.about {
+    padding: 16px 32px;
+
+    .about__header {
+        font-size: 44px;
+        font-weight: bold;
+        padding: 24px 0;
+        font-family: Avenir Next;
+    }
+
+    img {
+        width: 100%;
+    }
+
+    .about__quote {
+        font-size: 28px;
+        font-weight: bold;
+        line-height: 1.5em;
+    }
+
+    .about__description {
+        h3 {
+            font-size: 28px;
+        }
+
+        p {
+            font-size: 26px;
+            line-height: 1.25em;
+        }
+    }
+}
+
+.photo {
+    padding: 16px 32px;
+    background-color: $mercury;
+
+    .photo__header {
+        font-size: 44px;
+        font-weight: bold;
+        padding: 24px 0;
+        font-family: Avenir Next;
+    }
+
+    img {
+        width: 100%;
+        padding: 0 0 20px;
+    }
+}
+
+.footer {
+    background-color: $black;
+    padding: 16px 32px;
+    color: $white;
+    display: flex;
+    flex-direction: column;
+
+    p {
+        font-size: 25px;
+        line-height: 1.4em;
+    }
+
+    .footer__header {
+        font-size: 44px;
+        font-weight: bold;
+        padding: 24px 0;
+        font-family: Avenir Next;
+    }
+
+    .footer__social {
+        display: flex;
+        justify-content: space-between;
+        width: 35vw;
+        padding: 24px 0;
+
+        img {
+            height: 44px;
+        }
+    }
+
+    .footer__contact {
+        padding: 16px 0;
+
+        h3 {
+            font-size: 25px;
+            font-weight: bold;
+            padding: 16px 0;
+        }
+    }
+
+    .footer__logo {
+        font-size: 50px;
+    }
 }
