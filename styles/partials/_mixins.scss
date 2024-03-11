@@ -1,27 +1,100 @@
 @use 'variables' as *;
 
-@mixin header {
+@mixin header ($padding-side) {
+    @content;
+
+    display: flex;
+    height: 68px;
+    padding: 0 $padding-side;
+
     h2 {
-        font-size: 44px;
-        height: 68px;
         display: inline-block;
+        font-size: 1.35lh;
     }
 
     nav {
         display: inline-block;
     }
+
+    nav ul {
+        padding: 0 1lh;
+
+        li {
+            height: 68px;
+            line-height: 64px;
+            margin: 0 0.5lh;
+            font-size: 15px;
+            box-sizing: border-box;
+        }
+    }
+}
+
+@mixin tablet-header {
+    @media screen and (min-width: $tablet-breakpoint) {
+        @content;
+        @include header($tablet-spacing);
+    }
+}
+
+@mixin desktop-header {
+    @media screen and (min-width: $desktop-breakpoint) {
+        @content;
+        @include header($desktop-spacing);
+    }
+}
+
+@mixin content ($padding-side) {
+    @content;
+
+    section {
+        padding: 0 $padding-side;
+    }
+
+    .about__content {
+        padding: 0 6vw;
+
+        .about__musician {
+            font-size: 20px;
+        }
+
+        .about__description {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+
+            p {
+                width: 49%;
+                font-size: 18px;
+                line-height: 1.5em;
+            }
+        }
+    }
+
+    .photo__gallery {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        img {
+            width: 30%;
+        }
+    }
 }
 
 @mixin tablet {
-  @media screen and (min-width: $tablet-breakpoint) {
-    @content;
-    @include header;
-  }
+    @media screen and (min-width: $tablet-breakpoint) {
+        @content;
+        @include content($tablet-spacing);
+    }
 }
-
+  
 @mixin desktop {
-  @media screen and (min-width: $desktop-breakpoint) {
-    @content;
-    @include header;
-  }
+    @media screen and (min-width: $desktop-breakpoint) {
+        @content;
+        @include content($desktop-spacing);
+
+        .about__quote {
+            width: 78%;
+        }
+    }
 }

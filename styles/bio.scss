@@ -7,7 +7,7 @@
     src: url(../assets/fonts/AvenirNextLTPro.ttf) format("truetype");
 }
 
-html, body, h1, h2, h3 {
+html, body, h1, h2, h3, ul {
     margin: 0;
     padding: 0;
     font-family: Avenir Next;
@@ -30,12 +30,9 @@ header {
     }
 
     nav {
-        font-size: 18px;
 
         ul {
             list-style-type: none;
-            margin: 0;
-            padding: 0;
             display: flex;
     
             li {
@@ -59,8 +56,8 @@ header {
         }
     }
 
-    @include tablet;
-    @include desktop;
+    @include tablet-header;
+    @include desktop-header;
 }
 
 section {
@@ -92,7 +89,7 @@ section {
     }
 
     .about__quote {
-        font-size: 28px;
+        font-size: 26px;
         font-weight: bold;
         line-height: 1.5em;
     }
@@ -100,6 +97,7 @@ section {
     .about__description {
         h3 {
             font-size: 28px;
+            width: 100%;
         }
 
         p {
@@ -174,3 +172,6 @@ section {
         font-size: 50px;
     }
 }
+
+@include tablet;
+@include desktop;
