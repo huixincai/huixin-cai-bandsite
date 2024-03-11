@@ -1,100 +1,186 @@
-@use 'variables' as *;
+@use "variables" as *;
 
-@mixin header ($padding-side) {
-    @content;
+@mixin header($padding-side) {
+  @content;
 
-    display: flex;
-    height: 68px;
-    padding: 0 $padding-side;
+  display: flex;
+  height: 68px;
+  padding: 0 $padding-side;
 
-    h2 {
-        display: inline-block;
-        font-size: 1.35lh;
+  h2 {
+    display: inline-block;
+    font-size: 1.35lh;
+  }
+
+  nav {
+    display: inline-block;
+  }
+
+  nav ul {
+    padding: 0 1lh;
+
+    li {
+      height: 68px;
+      line-height: 64px;
+      margin: 0 0.5lh;
+      font-size: 15px;
+      box-sizing: border-box;
     }
-
-    nav {
-        display: inline-block;
-    }
-
-    nav ul {
-        padding: 0 1lh;
-
-        li {
-            height: 68px;
-            line-height: 64px;
-            margin: 0 0.5lh;
-            font-size: 15px;
-            box-sizing: border-box;
-        }
-    }
+  }
 }
 
 @mixin tablet-header {
-    @media screen and (min-width: $tablet-breakpoint) {
-        @content;
-        @include header($tablet-spacing);
-    }
+  @media screen and (min-width: $tablet-breakpoint) {
+    @content;
+    @include header($tablet-spacing);
+  }
 }
 
 @mixin desktop-header {
-    @media screen and (min-width: $desktop-breakpoint) {
-        @content;
-        @include header($desktop-spacing);
-    }
+  @media screen and (min-width: $desktop-breakpoint) {
+    @content;
+    @include header($desktop-spacing);
+  }
 }
 
-@mixin content ($padding-side) {
-    @content;
+@mixin content($padding-side) {
+  @content;
 
-    section {
-        padding: 0 $padding-side;
+  section {
+    padding: 0 $padding-side;
+  }
+
+  .about__content {
+    padding: 0 6vw;
+
+    .about__musician {
+      font-size: 20px;
     }
 
-    .about__content {
-        padding: 0 6vw;
+    .about__description {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
 
-        .about__musician {
-            font-size: 20px;
-        }
+      p {
+        width: 49%;
+        font-size: 18px;
+        line-height: 1.5em;
+      }
+    }
+  }
 
-        .about__description {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
+  .photo__gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 
-            p {
-                width: 49%;
-                font-size: 18px;
-                line-height: 1.5em;
-            }
-        }
+    img {
+      width: 30%;
+    }
+  }
+
+  .footer {
+    padding: 0 $padding-side;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    p, h3 {
+      font-size: 1.4vw;
+      line-height: 1.4em;
     }
 
-    .photo__gallery {
+    .footer__header {
+      font-size: 3vw;
+    }
+
+    .footer__social {
+      width: 30%;
+      justify-content: flex-start;
+
+      img {
+        padding-right: 30px;
+        height: 28px;
+      }
+    }
+
+    .footer__logo,
+    .footer__copyright {
+      order: 0;
+    }
+
+    .footer__logo {
         display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-
-        img {
-            width: 30%;
-        }
+        justify-content: flex-end;
     }
+
+    .footer__copyright {
+      width: 100%;
+    }
+  }
 }
 
 @mixin tablet {
-    @media screen and (min-width: $tablet-breakpoint) {
-        @content;
-        @include content($tablet-spacing);
-    }
-}
-  
-@mixin desktop {
-    @media screen and (min-width: $desktop-breakpoint) {
-        @content;
-        @include content($desktop-spacing);
+  @media screen and (min-width: $tablet-breakpoint) {
+    @content;
+    @include content($tablet-spacing);
 
-        .about__quote {
-            width: 78%;
-        }
+    .footer {
+      .footer__header {
+        font-size: 4vw;
+      }
+
+      h3 {
+        font-size: 1.8vw;
+      }
+
+      div {
+        width: 30%;
+      }
+
+      .footer__logo {
+        font-size: 3vw;
+      }
     }
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: $desktop-breakpoint) {
+    @content;
+    @include content($desktop-spacing);
+
+    .footer {
+      div,
+      .footer__social {
+        width: 25%;
+      }
+
+      .footer__header {
+        font-size: 3vw;
+      }
+
+      .footer__logo,
+      .footer__contact--right {
+        width: 40%;
+      }
+
+      .footer__contact {
+        h3 {
+            font-size: 1.4vw;
+        }
+      }
+
+      .footer__logo {
+        display: flex;
+        justify-content: flex-end;
+        font-size: 2vw;
+      }
+    }
+
+    .about__quote {
+      width: 78%;
+    }
+  }
 }
