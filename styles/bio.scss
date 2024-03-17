@@ -1,13 +1,14 @@
+@use "./partials/fonts" as *;
 @use "./partials/colors" as *;
 @use "./partials/variables" as *;
 @use "./partials/mixins" as *;
 
-@font-face {
-  font-family: "Avenir Next";
-  src: url(../assets/fonts/AvenirNextLTPro.ttf) format("truetype");
-}
-
-html, body, h1, h2, h3, ul {
+html,
+body,
+h1,
+h2,
+h3,
+ul {
   margin: 0;
   padding: 0;
   font-family: Avenir Next;
@@ -19,7 +20,7 @@ header {
   h2 {
     height: 35px;
     font-size: 35px;
-    font-weight: 500;;
+    font-weight: 500;
     text-align: center;
     padding: 15px 0;
   }
@@ -30,11 +31,10 @@ header {
   }
 
   nav {
-
     ul {
       list-style-type: none;
       display: flex;
-  
+
       li {
         width: 50%;
         height: 35px;
@@ -43,7 +43,9 @@ header {
         font-weight: 600;
         color: $mercury;
         text-align: center;
-        &.navbar--active, &:hover {
+
+        &.navbar--active,
+        &:hover {
           color: $white;
           border-bottom: 4px solid $white;
         }
@@ -76,7 +78,6 @@ section {
 }
 
 .about {
-
   .about__header {
     font-size: 44px;
     font-weight: bold;
@@ -131,7 +132,8 @@ section {
   flex-direction: column;
   align-items: baseline;
 
-  p, h3 {
+  p,
+  h3 {
     font-size: 25px;
     line-height: 1.4em;
   }
@@ -172,7 +174,7 @@ section {
 
   .footer__logo {
     font-size: 50px;
-    order: 1
+    order: 1;
   }
 
   .footer__copyright {

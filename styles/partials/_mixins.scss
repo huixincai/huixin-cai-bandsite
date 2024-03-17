@@ -86,7 +86,8 @@
     flex-wrap: wrap;
     justify-content: space-between;
 
-    p, h3 {
+    p,
+    h3 {
       font-size: 1.4vw;
       line-height: 1.4em;
     }
@@ -111,8 +112,8 @@
     }
 
     .footer__logo {
-        display: flex;
-        justify-content: flex-end;
+      display: flex;
+      justify-content: flex-end;
     }
 
     .footer__copyright {
@@ -152,6 +153,7 @@
     @include content($desktop-spacing);
 
     .footer {
+
       div,
       .footer__social {
         width: 25%;
@@ -168,7 +170,7 @@
 
       .footer__contact {
         h3 {
-            font-size: 1.4vw;
+          font-size: 1.4vw;
         }
       }
 

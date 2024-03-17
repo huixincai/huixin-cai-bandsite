@@ -1,5 +1,26 @@
 @font-face {
   font-family: "Avenir Next";
+  src: url("../../assets/fonts/AvenirNextLTPro-Regular.otf") format(OpenType);
+  src: url("../../assets/fonts/Alternative/AvenirNextLTPro.ttf") format(truetype);
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Avenir Next";
+  src: url("../../assets/fonts/AvenirNextLTPro-Demi.otf") format(OpenType);
+  src: url("../../assets/fonts/Alternative/AvenirNextLTProDemi.ttf") format(truetype);
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Avenir Next";
+  src: url("../../assets/fonts/AvenirNextLTPro-Bold.otf") format(OpenType);
+  src: url("../../assets/fonts/Alternative/AvenirNextLTProBold.ttf") format(truetype);
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Avenir Next";
   src: url(../assets/fonts/AvenirNextLTPro.ttf) format("truetype");
 }
 html, body, h1, h2, h3, ul {
@@ -66,7 +87,7 @@ header nav ul li a {
     box-sizing: border-box;
   }
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1280px) {
   header {
     display: flex;
     height: 68px;
@@ -264,7 +285,7 @@ section {
     font-size: 3vw;
   }
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1280px) {
   section {
     padding: 0 10vw;
   }
