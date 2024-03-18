@@ -7,7 +7,7 @@
   height: 68px;
   padding: 0 $padding-side;
 
-  h2 {
+  .navbar__logo {
     display: inline-block;
     font-size: 1.35lh;
   }
@@ -122,7 +122,7 @@
   }
 }
 
-@mixin tablet {
+@mixin tablet-main {
   @media screen and (min-width: $tablet-breakpoint) {
     @content;
     @include content($tablet-spacing);
@@ -147,7 +147,7 @@
   }
 }
 
-@mixin desktop {
+@mixin desktop-main {
   @media screen and (min-width: $desktop-breakpoint) {
     @content;
     @include content($desktop-spacing);
@@ -184,5 +184,17 @@
     .about__quote {
       width: 78%;
     }
+  }
+}
+
+@mixin tablet {
+  @media (min-width: $tablet-breakpoint){
+      @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: $desktop-breakpoint){
+      @content;
   }
 }

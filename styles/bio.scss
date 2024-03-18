@@ -14,20 +14,33 @@ ul {
   font-family: Avenir Next;
 }
 
+html {
+  @include tablet {
+    font-size: 24px;
+  }
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  padding: 1rem 0;
+  font-family: Avenir Next;
+}
+
 header {
   background-color: $black;
 
-  h2 {
+  .navbar__logo {
     height: 35px;
     font-size: 35px;
     font-weight: 500;
     text-align: center;
     padding: 15px 0;
-  }
 
-  .navbar__logo a {
-    color: $white;
-    text-decoration: none;
+    a {
+      color: $white;
+      text-decoration: none;
+    }
   }
 
   nav {
@@ -78,12 +91,6 @@ section {
 }
 
 .about {
-  .about__header {
-    font-size: 44px;
-    font-weight: bold;
-    padding: 24px 0;
-    font-family: Avenir Next;
-  }
 
   img {
     width: 100%;
@@ -111,16 +118,139 @@ section {
 .photo {
   background-color: $mercury;
 
-  .photo__header {
-    font-size: 44px;
-    font-weight: bold;
-    padding: 24px 0;
-    font-family: Avenir Next;
-  }
-
   img {
     width: 100%;
     padding: 0 0 4vw;
+  }
+}
+
+.comments {
+
+  &__wrapper {
+    margin: auto;
+
+    @include tablet {
+      width: 80%;
+    }
+
+    @include desktop {
+      width: 50%;
+    }
+  }
+
+  &__comment-form-wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__comment-avatar {
+    width: 2rem;
+    height: 2rem;
+    background-size: cover;
+    background-position: top center;
+    background-color: $mercury;
+    border-radius: 50%;
+
+    &--form {
+      background-image: url("../assets/images/Mohan-muruge.jpg");
+    }
+  }
+
+  &__comment-form {
+    width: 90%;
+
+    .comments__form-input {
+      padding: 12px;
+      border: 1px solid $mercury;
+      border-radius: 4px;
+      font-size: 1rem;
+
+      &::placeholder {
+        color: $black;
+        font-family: Avenir Next;
+        font-weight: 600;
+      }
+
+      &:focus {
+        border-color: 1px solid $black;
+      }
+
+      &--error {
+        border-color: #D22D2D;
+      }
+
+      &--textarea {
+        height: 4.5rem;
+      }
+
+      @include tablet {
+        padding: 16px;
+      }
+    }
+  }
+
+  &__input-field {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem 0;
+  }
+
+  &__form-label {
+    line-height: 20px;
+    font-weight: 600;
+    margin-bottom: 4px;
+    color: $silver;
+  }
+
+  &__form-submit {
+    padding: 0.5rem 0;
+    float: right;
+
+    button {
+      background-color: $black;
+      color: $white;
+      height: 40px;
+      min-width: 150px;
+      border-radius: 4px;
+      border: none;
+      font-weight: 700;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $darkblack;
+      }
+    }
+  }
+
+  &__comments-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__divider {
+    border-top: 1px solid $mercury;
+    margin: 1rem 0;
+  }
+
+  &__comment-item {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__comment-section {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+  }
+
+  &__comment-header {
+    display: flex;
+    justify-content: space-between;
+    line-height: 2rem;
+  }
+
+  &__comment-header-timestamp {
+    color: $silver;
   }
 }
 
@@ -139,10 +269,6 @@ section {
   }
 
   .footer__header {
-    font-size: 44px;
-    font-weight: bold;
-    padding: 24px 0;
-    font-family: Avenir Next;
     order: -3;
   }
 
@@ -182,5 +308,5 @@ section {
   }
 }
 
-@include tablet;
-@include desktop;
+@include tablet-main;
+@include desktop-main;

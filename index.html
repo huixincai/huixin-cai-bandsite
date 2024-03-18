@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Bees Knees - Official Band Site</title>
     <link rel="stylesheet" href="styles/bio.css">
+    <script src="./scripts/index-page.js" defer></script>
 </head>
 
 <body>
@@ -27,9 +28,9 @@
         </section>
 
         <section class="about">
-            <div class="about__header">
+            <h2 class="about__header">
                 About the Musicians
-            </div>
+            </h2>
             <div class="about__content">
                 <img alt="about musicians" src="./assets/images/band.jpg">
                 <div class="about__quote">
@@ -62,9 +63,9 @@
         </section>
 
         <section class="photo">
-            <div class="photo__header">
+            <h2 class="photo__header">
                 Photo Gallery
-            </div>
+            </h2>
             <div class="photo__gallery">
                 <img alt="photo gallary 1" src="./assets/images/Photo-gallery-1.jpg">
                 <img alt="photo gallary 2" src="./assets/images/Photo-gallery-2.jpg">
@@ -77,12 +78,40 @@
                 <img alt="photo gallary 9" src="./assets/images/Photo-gallery-9.jpg">
             </div>
         </section>
+
+        <section class="comments">
+            <h2>Join the Conversation</h2>
+            <div class="comments__wrapper">
+                <div class="comments__comment-form-wrapper">
+                    <div class="comments__comment-avatar comments__comment-avatar--form"></div>
+                    <form class="comments__comment-form">
+                        <!-- Name -->
+                        <div class="comments__input-field">
+                            <label class="comments__form-label" for="nameId">Name</label>
+                            <input class="comments__form-input" type="text" name="name" id="nameId" placeholder="Enter your name" />
+                        </div>
+    
+                        <!-- Comment -->
+                        <div class="comments__input-field">
+                            <label class="comments__form-label" for="commentId">Comment</label>
+                            <textarea class="comments__form-input comments__form-input--textarea" name="comment" id="commentId" placeholder="Add a new comment"></textarea>
+                        </div>
+    
+                        <!-- Submit button -->
+                        <div class="comments__form-submit">
+                            <button type="submit">COMMENT</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="comments__comments-list"></div>
+            </div>
+        </section>
     </main>
 
     <footer class="footer">
-        <div class="footer__header">
+        <h2 class="footer__header">
             Get In Touch
-        </div>
+        </h2>
         <div class="footer__social">
             <img alt="instagram" src="./assets/icons/Icon-instagram.svg">
             <img alt="facebook" src="./assets/icons/Icon-facebook.svg">
