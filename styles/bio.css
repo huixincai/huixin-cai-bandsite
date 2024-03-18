@@ -141,7 +141,7 @@ header nav ul li a {
 }
 
 section {
-  padding: 16px 32px;
+  padding: 1rem;
 }
 
 .hero {
@@ -181,6 +181,11 @@ section {
 .photo img {
   width: 100%;
   padding: 0 0 4vw;
+}
+
+.divider {
+  border-top: 1px solid #E1E1E1;
+  margin: 1rem 0;
 }
 
 .comments__wrapper {
@@ -262,10 +267,6 @@ section {
 .comments__comments-list {
   display: flex;
   flex-direction: column;
-}
-.comments__divider {
-  border-top: 1px solid #E1E1E1;
-  margin: 1rem 0;
 }
 .comments__comment-item {
   display: flex;

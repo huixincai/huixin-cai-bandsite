@@ -77,7 +77,7 @@ function createComment(commentObj) {
 
 function createDivider() {
     const divider = document.createElement("div");
-    divider.classList.add("comments__divider");
+    divider.classList.add("divider");
     commentListElement.appendChild(divider);
 }
 

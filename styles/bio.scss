@@ -91,7 +91,7 @@ header {
 }
 
 section {
-  padding: 16px 32px;
+  padding: 1rem;
 }
 
 .hero {
@@ -140,6 +140,11 @@ section {
     width: 100%;
     padding: 0 0 4vw;
   }
+}
+
+.divider {
+  border-top: 1px solid $mercury;
+  margin: 1rem 0;
 }
 
 .comments {
@@ -228,11 +233,6 @@ section {
   &__comments-list {
     display: flex;
     flex-direction: column;
-  }
-
-  &__divider {
-    border-top: 1px solid $mercury;
-    margin: 1rem 0;
   }
 
   &__comment-item {

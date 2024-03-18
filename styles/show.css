@@ -58,11 +58,11 @@ table {
 }
 @media (min-width: 1280px) {
   table {
-    width: 70%;
+    width: 75%;
   }
 }
 
-tr {
+tbody tr {
   border-bottom: 1pt solid #E1E1E1;
 }
 
@@ -76,11 +76,28 @@ th {
   font-weight: normal;
 }
 
+.hero {
+  padding: 1rem;
+}
+
+section {
+  padding: 1rem 0;
+}
+@media (min-width: 768px) {
+  section {
+    padding: 1rem;
+  }
+}
+
 .shows {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.shows__table {
+  font-size: 0.75rem;
 }
 .shows__table--hide {
   display: none;
@@ -102,7 +119,46 @@ th {
 }
 .shows h2 {
   font-size: 2rem;
+  padding: 1rem;
+}
+.shows table {
+  padding: 1rem;
 }
 .shows__table-data-date {
   font-weight: bold;
+}
+@media (min-width: 1280px) {
+  .shows__table-data-date {
+    width: 35%;
+  }
+}
+.shows__table-data-button {
+  text-align: right;
+}
+.shows__item {
+  padding: 0.5rem 1rem;
+}
+.shows__item:hover {
+  background-color: #FAFAFA;
+}
+.shows__item--active {
+  background-color: #E1E1E1;
+}
+.shows__item--active:hover {
+  background-color: #E1E1E1;
+}
+.shows__item-field {
+  padding: 0.5rem 0;
+}
+.shows__item-label {
+  color: #AFAFAF;
+}
+.shows__item-label, .shows__item-value {
+  padding: 4px 0;
+}
+.shows__item-date {
+  font-weight: bold;
+}
+.shows__item-button {
+  width: 100%;
 }/*# sourceMappingURL=show.css.map */

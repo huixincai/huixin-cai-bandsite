@@ -40,11 +40,11 @@ table {
   width: 100%;
   margin-top: 1rem;
   @include desktop {
-    width: 70%;
+    width: 75%;
   }
 }
 
-tr {
+tbody tr {
   border-bottom: 1pt solid $mercury;
 }
 
@@ -58,11 +58,27 @@ th {
   font-weight: normal;
 }
 
+.hero {
+  padding: 1rem;
+}
+
+section {
+  padding: 1rem 0;
+  @include tablet {
+    padding: 1rem;
+  }
+}
+
 .shows {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding-top: 1rem;
+  padding-bottom: 1rem;
+
+  &__table {
+    font-size: 0.75rem;
+  }
 
   &__table--hide {
     display: none;
@@ -81,17 +97,60 @@ th {
     }
   }
   
-  
-  
   @include desktop {
     flex-direction: row;
     font-size: 0.75rem;
   }
   h2 {
     font-size: 2rem;
+    padding: 1rem;
+  }
+  table {
+    padding: 1rem;
   }
 
   &__table-data-date {
     font-weight: bold;
+    @include desktop {
+      width: 35%;
+    }
+  }
+
+  &__table-data-button {
+    text-align: right;
+  }
+
+  &__item {
+    padding: 0.5rem 1rem;
+    &:hover {
+      background-color: $alabaster;
+    }
+  }
+
+  &__item--active {
+    background-color: $mercury;
+    &:hover {
+      background-color: $mercury;
+    }
+  }
+
+  &__item-field {
+    padding: 0.5rem 0;
+  }
+
+  &__item-label {
+    color: $silver;
+  }
+
+  &__item-label, &__item-value {
+    padding: 4px 0;
+  }
+
+  &__item-date {
+    font-weight: bold;
+  }
+
+  &__item-button {
+    width: 100%;
   }
 }
