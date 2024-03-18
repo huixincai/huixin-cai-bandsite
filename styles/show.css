@@ -1,1 +1,108 @@
-/*# sourceMappingURL=show.css.map */
+@font-face {
+  font-family: "Avenir Next";
+  src: url("../assets/fonts/AvenirNextLTPro-Regular.otf") format(OpenType);
+  src: url("../assets/fonts/AvenirNextLTPro.ttf") format(truetype);
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Avenir Next";
+  src: url("../assets/fonts/AvenirNextLTPro-Demi.otf") format(OpenType);
+  src: url("../assets/fonts/AvenirNextLTProDemi.ttf") format(truetype);
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Avenir Next";
+  src: url("../assets/fonts/AvenirNextLTPro-Bold.otf") format(OpenType);
+  src: url("../assets/fonts/AvenirNextLTProBold.ttf") format(truetype);
+  font-weight: 900;
+  font-style: normal;
+}
+.hero__sound-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .hero__sound-wrapper iframe {
+    max-width: 60%;
+  }
+}
+@media (min-width: 1280px) {
+  .hero__sound-wrapper {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .hero__sound-wrapper iframe {
+    max-width: 30%;
+  }
+}
+.hero__content {
+  width: 70%;
+}
+@media (min-width: 768px) {
+  .hero__content {
+    font-size: 2.5rem;
+  }
+}
+.hero h3 {
+  font-size: 1.5rem;
+  font-weight: normal;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 1rem;
+}
+@media (min-width: 1280px) {
+  table {
+    width: 70%;
+  }
+}
+
+tr {
+  border-bottom: 1pt solid #E1E1E1;
+}
+
+td, th {
+  padding: 24px 18px;
+}
+
+th {
+  text-align: justify;
+  color: #AFAFAF;
+  font-weight: normal;
+}
+
+.shows {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 1rem;
+}
+.shows__table--hide {
+  display: none;
+}
+.shows__table-data-row:not(:first-child):hover {
+  background-color: #FAFAFA;
+}
+.shows__table-data-row--active {
+  background-color: #E1E1E1;
+}
+.shows__table-data-row--active:not(:first-child):hover {
+  background-color: #E1E1E1;
+}
+@media (min-width: 1280px) {
+  .shows {
+    flex-direction: row;
+    font-size: 0.75rem;
+  }
+}
+.shows h2 {
+  font-size: 2rem;
+}
+.shows__table-data-date {
+  font-weight: bold;
+}/*# sourceMappingURL=show.css.map */

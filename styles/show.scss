@@ -1,0 +1,97 @@
+@use "./partials/fonts" as *;
+@use "./partials/colors" as *;
+@use "./partials/variables" as *;
+@use "./partials/mixins" as *;
+
+.hero {
+  &__sound-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    @include tablet {
+      iframe {
+        max-width: 60%;
+      }
+    }
+    @include desktop {
+      flex-direction: row;
+      justify-content: space-between;
+
+      iframe {
+        max-width: 30%;
+      }
+    }
+  }
+  &__content {
+    width: 70%;
+    @include tablet {
+      font-size: 2.5rem;
+    }
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    font-weight: normal;
+  }
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 1rem;
+  @include desktop {
+    width: 70%;
+  }
+}
+
+tr {
+  border-bottom: 1pt solid $mercury;
+}
+
+td, th {
+  padding: 24px 18px;
+}
+
+th {
+  text-align: justify;
+  color: $silver;
+  font-weight: normal;
+}
+
+.shows {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 1rem;
+
+  &__table--hide {
+    display: none;
+  }
+
+  &__table-data-row {
+    &:not(:first-child):hover {
+      background-color: $alabaster;
+    }
+  }
+
+  &__table-data-row--active {
+    background-color: $mercury;
+    &:not(:first-child):hover {
+      background-color: $mercury;
+    }
+  }
+  
+  
+  
+  @include desktop {
+    flex-direction: row;
+    font-size: 0.75rem;
+  }
+  h2 {
+    font-size: 2rem;
+  }
+
+  &__table-data-date {
+    font-weight: bold;
+  }
+}
