@@ -95,7 +95,7 @@ header nav ul li a {
   header {
     display: flex;
     height: 68px;
-    padding: 0 5vw;
+    padding: 0 1rem;
   }
   header .navbar__logo {
     display: inline-block;
@@ -119,7 +119,7 @@ header nav ul li a {
   header {
     display: flex;
     height: 68px;
-    padding: 0 10vw;
+    padding: 0 3rem;
   }
   header .navbar__logo {
     display: inline-block;
@@ -148,7 +148,7 @@ section {
   background-image: url("../assets/images/hero-bio.jpg");
   background-size: cover;
   box-shadow: inset 0 0 0 2000px rgba(50, 50, 50, 0.5);
-  height: 66vw;
+  height: 60vw;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -156,6 +156,11 @@ section {
   color: #FFFFFF;
   font-size: 38px;
   font-weight: 600;
+}
+@media (min-width: 768px) {
+  .hero {
+    height: 55vw;
+  }
 }
 
 .about img {
@@ -188,6 +193,10 @@ section {
   margin: 1rem 0;
 }
 
+.comments {
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+}
 .comments__wrapper {
   margin: auto;
 }
@@ -206,15 +215,29 @@ section {
   justify-content: space-between;
 }
 .comments__comment-avatar {
-  width: 2rem;
-  height: 2rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  max-height: 36px;
+  max-width: 36px;
   background-size: cover;
   background-position: top center;
   background-color: #E1E1E1;
   border-radius: 50%;
 }
+@media (min-width: 768px) {
+  .comments__comment-avatar {
+    max-height: 48px;
+    max-width: 48px;
+  }
+}
 .comments__comment-avatar--form {
   background-image: url("../assets/images/Mohan-muruge.jpg");
+  margin-top: 2rem;
+}
+@media (min-width: 768px) {
+  .comments__comment-avatar--form {
+    margin-top: 1.8rem;
+  }
 }
 .comments__comment-form {
   width: 90%;
@@ -333,7 +356,7 @@ section {
 
 @media screen and (min-width: 768px) {
   section {
-    padding: 0 5vw;
+    padding: 0 1rem;
   }
   .about__content {
     padding: 0 6vw;
@@ -360,7 +383,7 @@ section {
     width: 30%;
   }
   .footer {
-    padding: 0 5vw;
+    padding: 0 1rem;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -407,7 +430,7 @@ section {
 }
 @media screen and (min-width: 1280px) {
   section {
-    padding: 0 10vw;
+    padding: 0 3rem;
   }
   .about__content {
     padding: 0 6vw;
@@ -434,7 +457,7 @@ section {
     width: 30%;
   }
   .footer {
-    padding: 0 10vw;
+    padding: 0 3rem;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
