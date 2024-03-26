@@ -81,14 +81,19 @@ function createDivider() {
 }
 
 async function renderCommentsList() {
-  // fetch the comments from the API before re-rendering the list
-  const comments = await bandSiteApi.getComments();
-  commentListElement.innerHTML = "";
-  createDivider();
-  comments.forEach((comment) => {
-    createComment(comment);
+  try {
+    // fetch the comments from the API before re-rendering the list
+    const comments = await bandSiteApi.getComments();
+    commentListElement.innerHTML = "";
     createDivider();
-  });
+    comments.forEach((comment) => {
+      createComment(comment);
+      createDivider();
+    });
+  } catch (error) {
+    commentListElement.innerText = "Sorry, we couldn't load the comments at the moment."
+  }
+  
 }
 
 renderCommentsList();

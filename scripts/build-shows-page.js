@@ -185,8 +185,17 @@ window.addEventListener("resize", function () {
 });
 
 async function init() {
-  shows = await bandSiteApi.getShows();
-  renderShows();
+  try {
+    shows = await bandSiteApi.getShows();
+    renderShows();
+  } catch (error) {
+    const errorMessage = "Sorry, we couldn't load the shows at the moment.";
+    if (window.innerWidth >= 768) {
+      showsTableBody.innerText = errorMessage;
+    } else {
+      showsList.innerHTML = errorMessage;
+    }
+  }
 }
 
 init();
