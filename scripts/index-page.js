@@ -30,6 +30,7 @@ commentForm.addEventListener("submit", async (e) => {
   };
 
   await bandSiteApi.postComment(newComment);
+  e.target.reset();
   renderCommentsList();
 });
 
@@ -80,10 +81,9 @@ function createDivider() {
 }
 
 async function renderCommentsList() {
+  // fetch the comments from the API before re-rendering the list
   const comments = await bandSiteApi.getComments();
-  while (commentListElement.firstChild) {
-    commentListElement.removeChild(commentListElement.firstChild);
-  }
+  commentListElement.innerHTML = "";
   createDivider();
   comments.forEach((comment) => {
     createComment(comment);

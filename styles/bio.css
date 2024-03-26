@@ -266,6 +266,7 @@ section {
 }
 .comments__comment-form .comments__form-input--textarea {
   height: 4.5rem;
+  resize: none;
 }
 @media (min-width: 768px) {
   .comments__comment-form .comments__form-input {

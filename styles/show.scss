@@ -18,6 +18,7 @@
     @include desktop {
       flex-direction: row;
       justify-content: space-between;
+      align-items: center;
 
       iframe {
         max-width: 30%;
@@ -102,14 +103,15 @@ section {
   }
 
   &__table-data-row {
-    &:not(:first-child):hover {
+    cursor: pointer;
+    &:hover {
       background-color: $alabaster;
     }
   }
 
   &__table-data-row--active {
     background-color: $mercury;
-    &:not(:first-child):hover {
+    &:hover {
       background-color: $mercury;
     }
   }

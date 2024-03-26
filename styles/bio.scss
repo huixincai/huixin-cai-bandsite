@@ -218,6 +218,7 @@ section {
 
       &--textarea {
         height: 4.5rem;
+        resize: none;
       }
 
       @include tablet {
