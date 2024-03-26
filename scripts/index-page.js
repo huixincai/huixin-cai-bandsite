@@ -4,48 +4,32 @@ const commentForm = document.querySelector(".comments__comment-form");
 // Select the appointment list element
 const commentListElement = document.querySelector(".comments__comments-list");
 
-const comments = [
-  {
-    name: "Victor Pinto",
-    timestamp: "11/02/2023",
-    text: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
-  },
-  {
-    name: "Christina Cabrera",
-    timestamp: "10/28/2023",
-    text: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.",
-  },
-  {
-    name: "Isaac Tadesse",
-    timestamp: "10/20/2023",
-    text: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
-  },
-];
+const apiKey = "854cd8c6-8cf9-4ba9-bc5d-4230f7932efb";
+const baseUrl = "https://unit-2-project-api-25c1595833b2.herokuapp.com/";
 
-commentForm.addEventListener("submit", (e) => {
+const bandSiteApi = new BandSiteApi(apiKey, baseUrl);
+
+function timestampToMMDDYYYY(timestamp) {
+  const date = new Date(timestamp);
+  const month = date.getMonth();
+  const day = date.getDate();
+  const year = date.getFullYear();
+
+  return `${month}/${day}/${year}`;
+}
+
+commentForm.addEventListener("submit", async (e) => {
   e.preventDefault();
 
   const name = e.target.nameId.value;
-  const text = e.target.commentId.value;
-
-  // this generates a Unix timestamp
-  const currTimestamp = Date.now();
-  const currDate = new Date(currTimestamp);
-
-  // mm/dd/yyyy
-  const month = currDate.getMonth();
-  const date = currDate.getDate();
-  const year = currDate.getFullYear();
-
-  const timestamp = `${month}/${date}/${year}`;
+  const comment = e.target.commentId.value;
 
   const newComment = {
     name,
-    text,
-    timestamp,
+    comment,
   };
 
-  comments.unshift(newComment);
+  await bandSiteApi.postComment(newComment);
   renderCommentsList();
 });
 
@@ -68,7 +52,7 @@ function createComment(commentObj) {
 
   const commentContentEl = document.createElement("div");
   commentContentEl.classList.add("comments__comment-content");
-  commentContentEl.innerText = commentObj.text;
+  commentContentEl.innerText = commentObj.comment;
 
   commentSectionEl.appendChild(commentHeaderEl);
   commentSectionEl.appendChild(commentContentEl);
@@ -79,7 +63,9 @@ function createComment(commentObj) {
 
   const commentHeaderTimestampEl = document.createElement("div");
   commentHeaderTimestampEl.classList.add("comments__comment-header-timestamp");
-  commentHeaderTimestampEl.innerText = commentObj.timestamp;
+  commentHeaderTimestampEl.innerText = timestampToMMDDYYYY(
+    commentObj.timestamp
+  );
 
   commentHeaderEl.appendChild(commentHeaderNameEl);
   commentHeaderEl.appendChild(commentHeaderTimestampEl);
@@ -93,7 +79,8 @@ function createDivider() {
   commentListElement.appendChild(divider);
 }
 
-function renderCommentsList() {
+async function renderCommentsList() {
+  const comments = await bandSiteApi.getComments();
   while (commentListElement.firstChild) {
     commentListElement.removeChild(commentListElement.firstChild);
   }
