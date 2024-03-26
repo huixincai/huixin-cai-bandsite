@@ -8,7 +8,7 @@ body,
 h1,
 h2,
 h3,
-ul {
+ul{
   margin: 0;
   padding: 0;
   font-family: Avenir Next;
@@ -17,6 +17,13 @@ ul {
 html {
   @include tablet {
     font-size: 24px;
+  }
+}
+
+section {
+  padding: 0 1rem;
+  @include desktop {
+    padding: 0 3rem;
   }
 }
 
@@ -77,7 +84,7 @@ button {
     display: flex;
     list-style: none;
     @include tablet {
-      padding-left: 2rem;
+      padding-left: 1.5rem;
     }
   }
 
@@ -100,6 +107,7 @@ button {
     @include tablet {
       width: auto;
       justify-content: normal;
+      padding: 1rem 0;
     }
     &--active {
       font-weight: bold;
@@ -112,24 +120,21 @@ button {
   }
 }
 
-section {
-  padding: 1rem;
-}
-
 .hero {
   background-image: url("../assets/images/hero-bio.jpg");
   background-size: cover;
   box-shadow: inset 0 0 0 2000px rgba($black, 0.5);
-  height: 60vw;
+  min-height: 60vw;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
   color: $white;
-  font-size: 38px;
+  font-size: 1.5rem;
   font-weight: 600;
   @include tablet {
     height: 55vw;
+    font-size: 3rem;
   }
 }
 
@@ -138,21 +143,66 @@ section {
     width: 100%;
   }
 
-  .about__quote {
-    font-size: 26px;
-    font-weight: bold;
-    line-height: 1.5em;
+  &__header {
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding: 1.5rem 0 0;
+    @include tablet {
+      padding: 2rem 0 0;
+    }
   }
 
-  .about__description {
-    h3 {
-      font-size: 28px;
-      width: 100%;
+  &__content {
+    padding: 1rem 0 0;
+    @include tablet {
+      padding: 1.5rem 1rem 0;
     }
+    @include desktop {
+      padding: 1.5rem 3rem 0;
+    }
+  }
 
-    p {
-      font-size: 26px;
-      line-height: 1.25em;
+  &__quote {
+    font-size: 1rem;
+    font-weight: bold;
+    line-height: 1.5em;
+    @include tablet {
+      font-size: 1.25rem;
+    }
+    @include desktop {
+      width: 78%;
+    }
+  }
+
+  &__musician {
+    font-size: 1rem;
+    font-weight: bold;
+    @include tablet {
+      font-weight: 600;
+    }
+  }
+
+  &__description {
+    @include tablet {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+  }
+
+  &__description-title {
+    width: 100%;
+    font-size: 1.25rem;
+    font-weight: 600;
+    @include tablet {
+      font-weight: bold;
+    }
+  }
+
+  &__description-content {
+    width: auto;
+    @include tablet {
+      width: 49%;
     }
   }
 }
@@ -160,9 +210,31 @@ section {
 .photo {
   background-color: $mercury;
 
-  img {
-    width: 100%;
-    padding: 0 0 4vw;
+  &__header {
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding: 1.5rem 0 0;
+    @include tablet {
+      padding: 2rem 0 0;
+    }
+  }
+
+  &__gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 1rem 0 0;
+    @include tablet {
+      padding: 1.5rem 0 0;
+    }
+
+    img {
+      width: 100%;
+      padding: 0 0 1rem;
+      @include tablet {
+        width: 30%;
+      }
+    }
   }
 }
 
@@ -172,13 +244,21 @@ section {
 }
 
 .comments {
-  padding-top: 2rem;
-  padding-bottom: 1rem;
+  &__header {
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding: 1.5rem 0 0;
+    @include tablet {
+      padding: 2rem 0 0;
+    }
+  }
 
   &__wrapper {
     margin: auto;
+    padding-top: 1rem;
 
     @include tablet {
+      padding-bottom: 1.5rem;
       width: 80%;
     }
 
@@ -193,17 +273,15 @@ section {
   }
 
   &__comment-avatar {
-    width: 2.5rem;
-    height: 2.5rem;
-    max-height: 36px;
-    max-width: 36px;
+    width: 2.25rem;
+    height: 2.25rem;
     background-size: cover;
     background-position: top center;
     background-color: $mercury;
     border-radius: 50%;
     @include tablet {
-      max-height: 48px;
-      max-width: 48px;
+      height: 2rem;
+      width: 2rem;
     }
 
     &--form {
@@ -216,36 +294,35 @@ section {
   }
 
   &__comment-form {
-    width: 90%;
+    width: 85%;
+    @include tablet {
+      width: 90%;
+    }
+  }
 
-    .comments__form-input {
-      padding: 12px;
-      border: 1px solid $mercury;
-      border-radius: 4px;
-      font-size: 1rem;
+  &__form-input {
+    padding: 0.75rem;
+    border: 1px solid $mercury;
+    border-radius: 4px;
+    font-size: 1rem;
 
-      &::placeholder {
-        color: $black;
-        font-family: Avenir Next;
-        font-weight: 600;
-      }
+    &::placeholder {
+      color: $black;
+      font-family: Avenir Next;
+      font-weight: 600;
+    }
 
-      &:focus {
-        border-color: 1px solid $black;
-      }
+    &:focus {
+      border-color: 1px solid $black;
+    }
 
-      &--error {
-        border-color: #d22d2d;
-      }
+    &--error {
+      border-color: #d22d2d;
+    }
 
-      &--textarea {
-        height: 4.5rem;
-        resize: none;
-      }
-
-      @include tablet {
-        padding: 16px;
-      }
+    &--textarea {
+      height: 4.5rem;
+      resize: none;
     }
   }
 
@@ -256,7 +333,6 @@ section {
   }
 
   &__form-label {
-    line-height: 20px;
     font-weight: 600;
     margin-bottom: 4px;
     color: $silver;
@@ -280,7 +356,10 @@ section {
   &__comment-section {
     display: flex;
     flex-direction: column;
-    width: 90%;
+    width: 85%;
+    @include tablet {
+      width: 90%;
+    }
   }
 
   &__comment-header {
@@ -296,40 +375,68 @@ section {
 
 .footer {
   background-color: $black;
-  padding: 16px 32px;
   color: $white;
   display: flex;
   flex-direction: column;
   align-items: baseline;
+  padding: 0 1rem;
+
+  @include tablet {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    div {
+      width: 33%;
+    }
+  }
+  @include desktop {
+    padding: 0 3rem;
+  }
 
   p,
   h3 {
-    font-size: 25px;
-    line-height: 1.4em;
-  }
-
-  .footer__header {
-    order: -3;
-  }
-
-  .footer__social {
-    display: flex;
-    justify-content: space-between;
-    width: 35vw;
-    padding: 24px 0;
-    order: -2;
-
-    img {
-      height: 44px;
+    font-size: 0.8125rem;
+    line-height: 1.125em;
+    @include tablet {
+      font-size: 0.6rem;
+      line-height: 1rem;
     }
   }
 
-  .footer__contact {
-    padding: 16px 0;
+  &__header {
+    order: -3;
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding: 1.5rem 0 0;
+    @include tablet {
+      padding: 2rem 0 0;
+    }
+  }
+
+  &__social {
+    display: flex;
+    padding: 1rem 0 1rem;
+    order: -2;
+
+    @include tablet {
+      padding: 1rem 0 0;
+    }
+
+    img {
+      height: 1.5rem;
+      padding-right: 1.5rem;
+      @include tablet {
+        padding-right: 1rem;
+        height: 1rem;
+      }
+    }
+  }
+
+  &__contact {
+    padding: 1rem 0 0;
 
     h3 {
-      font-weight: bold;
-      padding: 16px 0;
+      font-weight: 600;
     }
 
     a {
@@ -338,15 +445,27 @@ section {
     }
   }
 
-  .footer__logo {
-    font-size: 50px;
-    order: 1;
+  &__contact--right {
+    @include tablet {
+      width: 40%;
+    }
   }
 
-  .footer__copyright {
+  &__logo {
+    order: 1;
+    font-size: 2rem;
+    @include tablet {
+      order: 0;
+      font-size: 1.25rem;
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+
+  &__copyright {
     order: 2;
+    @include tablet {
+      order: 0;
+    }
   }
 }
-
-@include tablet-main;
-@include desktop-main;

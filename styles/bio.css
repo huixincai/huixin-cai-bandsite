@@ -36,6 +36,15 @@ ul {
   }
 }
 
+section {
+  padding: 0 1rem;
+}
+@media (min-width: 1280px) {
+  section {
+    padding: 0 3rem;
+  }
+}
+
 h2 {
   font-size: 2rem;
   font-weight: 700;
@@ -99,7 +108,7 @@ button:hover {
 }
 @media (min-width: 768px) {
   .navbar__list {
-    padding-left: 2rem;
+    padding-left: 1.5rem;
   }
 }
 .navbar__item {
@@ -124,6 +133,7 @@ button:hover {
   .navbar__link {
     width: auto;
     justify-content: normal;
+    padding: 1rem 0;
   }
 }
 .navbar__link--active {
@@ -134,52 +144,134 @@ button:hover {
   border-bottom: 4px solid #ffffff;
 }
 
-section {
-  padding: 1rem;
-}
-
 .hero {
   background-image: url("../assets/images/hero-bio.jpg");
   background-size: cover;
   box-shadow: inset 0 0 0 2000px rgba(50, 50, 50, 0.5);
-  height: 60vw;
+  min-height: 60vw;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
   color: #ffffff;
-  font-size: 38px;
+  font-size: 1.5rem;
   font-weight: 600;
 }
 @media (min-width: 768px) {
   .hero {
     height: 55vw;
+    font-size: 3rem;
   }
 }
 
 .about img {
   width: 100%;
 }
-.about .about__quote {
-  font-size: 26px;
+.about__header {
+  font-size: 1.5rem;
+  font-weight: 700;
+  padding: 1.5rem 0 0;
+}
+@media (min-width: 768px) {
+  .about__header {
+    padding: 2rem 0 0;
+  }
+}
+.about__content {
+  padding: 1rem 0 0;
+}
+@media (min-width: 768px) {
+  .about__content {
+    padding: 1.5rem 1rem 0;
+  }
+}
+@media (min-width: 1280px) {
+  .about__content {
+    padding: 1.5rem 3rem 0;
+  }
+}
+.about__quote {
+  font-size: 1rem;
   font-weight: bold;
   line-height: 1.5em;
 }
-.about .about__description h3 {
-  font-size: 28px;
-  width: 100%;
+@media (min-width: 768px) {
+  .about__quote {
+    font-size: 1.25rem;
+  }
 }
-.about .about__description p {
-  font-size: 26px;
-  line-height: 1.25em;
+@media (min-width: 1280px) {
+  .about__quote {
+    width: 78%;
+  }
+}
+.about__musician {
+  font-size: 1rem;
+  font-weight: bold;
+}
+@media (min-width: 768px) {
+  .about__musician {
+    font-weight: 600;
+  }
+}
+@media (min-width: 768px) {
+  .about__description {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
+.about__description-title {
+  width: 100%;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+@media (min-width: 768px) {
+  .about__description-title {
+    font-weight: bold;
+  }
+}
+.about__description-content {
+  width: auto;
+}
+@media (min-width: 768px) {
+  .about__description-content {
+    width: 49%;
+  }
 }
 
 .photo {
   background-color: #e1e1e1;
 }
-.photo img {
+.photo__header {
+  font-size: 1.5rem;
+  font-weight: 700;
+  padding: 1.5rem 0 0;
+}
+@media (min-width: 768px) {
+  .photo__header {
+    padding: 2rem 0 0;
+  }
+}
+.photo__gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 1rem 0 0;
+}
+@media (min-width: 768px) {
+  .photo__gallery {
+    padding: 1.5rem 0 0;
+  }
+}
+.photo__gallery img {
   width: 100%;
-  padding: 0 0 4vw;
+  padding: 0 0 1rem;
+}
+@media (min-width: 768px) {
+  .photo__gallery img {
+    width: 30%;
+  }
 }
 
 .divider {
@@ -187,15 +279,23 @@ section {
   margin: 1rem 0;
 }
 
-.comments {
-  padding-top: 2rem;
-  padding-bottom: 1rem;
+.comments__header {
+  font-size: 1.5rem;
+  font-weight: 700;
+  padding: 1.5rem 0 0;
+}
+@media (min-width: 768px) {
+  .comments__header {
+    padding: 2rem 0 0;
+  }
 }
 .comments__wrapper {
   margin: auto;
+  padding-top: 1rem;
 }
 @media (min-width: 768px) {
   .comments__wrapper {
+    padding-bottom: 1.5rem;
     width: 80%;
   }
 }
@@ -209,10 +309,8 @@ section {
   justify-content: space-between;
 }
 .comments__comment-avatar {
-  width: 2.5rem;
-  height: 2.5rem;
-  max-height: 36px;
-  max-width: 36px;
+  width: 2.25rem;
+  height: 2.25rem;
   background-size: cover;
   background-position: top center;
   background-color: #e1e1e1;
@@ -220,8 +318,8 @@ section {
 }
 @media (min-width: 768px) {
   .comments__comment-avatar {
-    max-height: 48px;
-    max-width: 48px;
+    height: 2rem;
+    width: 2rem;
   }
 }
 .comments__comment-avatar--form {
@@ -234,38 +332,38 @@ section {
   }
 }
 .comments__comment-form {
-  width: 90%;
+  width: 85%;
 }
-.comments__comment-form .comments__form-input {
-  padding: 12px;
+@media (min-width: 768px) {
+  .comments__comment-form {
+    width: 90%;
+  }
+}
+.comments__form-input {
+  padding: 0.75rem;
   border: 1px solid #e1e1e1;
   border-radius: 4px;
   font-size: 1rem;
 }
-.comments__comment-form .comments__form-input::-moz-placeholder {
+.comments__form-input::-moz-placeholder {
   color: #323232;
   font-family: Avenir Next;
   font-weight: 600;
 }
-.comments__comment-form .comments__form-input::placeholder {
+.comments__form-input::placeholder {
   color: #323232;
   font-family: Avenir Next;
   font-weight: 600;
 }
-.comments__comment-form .comments__form-input:focus {
+.comments__form-input:focus {
   border-color: 1px solid #323232;
 }
-.comments__comment-form .comments__form-input--error {
+.comments__form-input--error {
   border-color: #d22d2d;
 }
-.comments__comment-form .comments__form-input--textarea {
+.comments__form-input--textarea {
   height: 4.5rem;
   resize: none;
-}
-@media (min-width: 768px) {
-  .comments__comment-form .comments__form-input {
-    padding: 16px;
-  }
 }
 .comments__input-field {
   display: flex;
@@ -273,7 +371,6 @@ section {
   padding: 0.5rem 0;
 }
 .comments__form-label {
-  line-height: 20px;
   font-weight: 600;
   margin-bottom: 4px;
   color: #afafaf;
@@ -293,7 +390,12 @@ section {
 .comments__comment-section {
   display: flex;
   flex-direction: column;
-  width: 90%;
+  width: 85%;
+}
+@media (min-width: 768px) {
+  .comments__comment-section {
+    width: 90%;
+  }
 }
 .comments__comment-header {
   display: flex;
@@ -306,204 +408,102 @@ section {
 
 .footer {
   background-color: #323232;
-  padding: 16px 32px;
   color: #ffffff;
   display: flex;
   flex-direction: column;
   align-items: baseline;
+  padding: 0 1rem;
+}
+@media (min-width: 768px) {
+  .footer {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .footer div {
+    width: 33%;
+  }
+}
+@media (min-width: 1280px) {
+  .footer {
+    padding: 0 3rem;
+  }
 }
 .footer p,
 .footer h3 {
-  font-size: 25px;
-  line-height: 1.4em;
+  font-size: 0.8125rem;
+  line-height: 1.125em;
 }
-.footer .footer__header {
+@media (min-width: 768px) {
+  .footer p,
+  .footer h3 {
+    font-size: 0.6rem;
+    line-height: 1rem;
+  }
+}
+.footer__header {
   order: -3;
+  font-size: 1.5rem;
+  font-weight: 700;
+  padding: 1.5rem 0 0;
 }
-.footer .footer__social {
+@media (min-width: 768px) {
+  .footer__header {
+    padding: 2rem 0 0;
+  }
+}
+.footer__social {
   display: flex;
-  justify-content: space-between;
-  width: 35vw;
-  padding: 24px 0;
+  padding: 1rem 0 1rem;
   order: -2;
 }
-.footer .footer__social img {
-  height: 44px;
+@media (min-width: 768px) {
+  .footer__social {
+    padding: 1rem 0 0;
+  }
 }
-.footer .footer__contact {
-  padding: 16px 0;
+.footer__social img {
+  height: 1.5rem;
+  padding-right: 1.5rem;
 }
-.footer .footer__contact h3 {
-  font-weight: bold;
-  padding: 16px 0;
+@media (min-width: 768px) {
+  .footer__social img {
+    padding-right: 1rem;
+    height: 1rem;
+  }
 }
-.footer .footer__contact a {
+.footer__contact {
+  padding: 1rem 0 0;
+}
+.footer__contact h3 {
+  font-weight: 600;
+}
+.footer__contact a {
   text-decoration: none;
   color: #ffffff;
 }
-.footer .footer__logo {
-  font-size: 50px;
-  order: 1;
-}
-.footer .footer__copyright {
-  order: 2;
-}
-
-@media screen and (min-width: 768px) {
-  section {
-    padding: 0 1rem;
-  }
-  .about__content {
-    padding: 0 6vw;
-  }
-  .about__content .about__musician {
-    font-size: 20px;
-  }
-  .about__content .about__description {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-  .about__content .about__description p {
-    width: 49%;
-    font-size: 18px;
-    line-height: 1.5em;
-  }
-  .photo__gallery {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-  .photo__gallery img {
-    width: 30%;
-  }
-  .footer {
-    padding: 0 1rem;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-  .footer p,
-  .footer h3 {
-    font-size: 1.4vw;
-    line-height: 1.4em;
-  }
-  .footer .footer__header {
-    font-size: 3vw;
-  }
-  .footer .footer__social {
-    width: 30%;
-    justify-content: flex-start;
-  }
-  .footer .footer__social img {
-    padding-right: 30px;
-    height: 28px;
-  }
-  .footer .footer__logo,
-  .footer .footer__copyright {
-    order: 0;
-  }
-  .footer .footer__logo {
-    display: flex;
-    justify-content: flex-end;
-  }
-  .footer .footer__copyright {
-    width: 100%;
-  }
-  .footer .footer__header {
-    font-size: 4vw;
-  }
-  .footer h3 {
-    font-size: 1.8vw;
-  }
-  .footer div {
-    width: 30%;
-  }
-  .footer .footer__logo {
-    font-size: 3vw;
-  }
-}
-@media screen and (min-width: 1280px) {
-  section {
-    padding: 0 3rem;
-  }
-  .about__content {
-    padding: 0 6vw;
-  }
-  .about__content .about__musician {
-    font-size: 20px;
-  }
-  .about__content .about__description {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-  .about__content .about__description p {
-    width: 49%;
-    font-size: 18px;
-    line-height: 1.5em;
-  }
-  .photo__gallery {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-  .photo__gallery img {
-    width: 30%;
-  }
-  .footer {
-    padding: 0 3rem;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-  .footer p,
-  .footer h3 {
-    font-size: 1.4vw;
-    line-height: 1.4em;
-  }
-  .footer .footer__header {
-    font-size: 3vw;
-  }
-  .footer .footer__social {
-    width: 30%;
-    justify-content: flex-start;
-  }
-  .footer .footer__social img {
-    padding-right: 30px;
-    height: 28px;
-  }
-  .footer .footer__logo,
-  .footer .footer__copyright {
-    order: 0;
-  }
-  .footer .footer__logo {
-    display: flex;
-    justify-content: flex-end;
-  }
-  .footer .footer__copyright {
-    width: 100%;
-  }
-  .footer div,
-  .footer .footer__social {
-    width: 25%;
-  }
-  .footer .footer__header {
-    font-size: 3vw;
-  }
-  .footer .footer__logo,
-  .footer .footer__contact--right {
+@media (min-width: 768px) {
+  .footer__contact--right {
     width: 40%;
   }
-  .footer .footer__contact h3 {
-    font-size: 1.4vw;
-  }
-  .footer .footer__logo {
+}
+.footer__logo {
+  order: 1;
+  font-size: 2rem;
+}
+@media (min-width: 768px) {
+  .footer__logo {
+    order: 0;
+    font-size: 1.25rem;
     display: flex;
     justify-content: flex-end;
-    font-size: 2vw;
   }
-  .about__quote {
-    width: 78%;
+}
+.footer__copyright {
+  order: 2;
+}
+@media (min-width: 768px) {
+  .footer__copyright {
+    order: 0;
   }
 }/*# sourceMappingURL=bio.css.map */
