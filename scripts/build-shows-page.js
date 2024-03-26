@@ -178,12 +178,8 @@ function renderShows() {
 }
 
 window.addEventListener("resize", function () {
-  while (showsTableBody.firstChild) {
-    showsTableBody.removeChild(showsTableBody.firstChild);
-  }
-  while (showsList.firstChild) {
-    showsList.removeChild(showsList.firstChild);
-  }
+  showsTableBody.innerHTML = "";
+  showsList.innerHTML = "";
 
   renderShows();
 });
