@@ -50,15 +50,12 @@ class BandSiteApi {
    *
    * @returns {object[]}
    */
-  getShows() {
-    return axios
-      .get(`${this.baseUrl}shows`, {
-        params: {
-          api_key: this.apiKey,
-        },
-      })
-      .then((response) => {
-        return response.data;
-      });
+  async getShows() {
+    const response = await axios.get(`${this.baseUrl}showdates`, {
+      params: {
+        api_key: this.apiKey,
+      },
+    });
+    return response.data;
   }
 }

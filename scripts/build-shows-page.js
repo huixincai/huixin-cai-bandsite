@@ -3,38 +3,12 @@ const showsList = document.querySelector(".shows__list");
 const showsTable = document.querySelector(".shows__table");
 const showsTableBody = document.querySelector(".shows__table-body");
 
-const shows = [
-  {
-    date: "Mon Sept 09 2024",
-    venue: "Ronald Lane",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Tue Sept 17 2024",
-    venue: "Pier 3 East",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Sat Oct 12 2024",
-    venue: "View Lounge",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Sat Nov 16 2024",
-    venue: "Hyatt Agency",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Fri Nov 29 2024",
-    venue: "Moscow Center",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Wed Dec 18 2024",
-    venue: "Press Club",
-    location: "San Francisco, CA",
-  },
-];
+const apiKey = "854cd8c6-8cf9-4ba9-bc5d-4230f7932efb";
+const baseUrl = "https://unit-2-project-api-25c1595833b2.herokuapp.com/";
+
+const bandSiteApi = new BandSiteApi(apiKey, baseUrl);
+
+let shows;
 
 function addTableRowSelectListener() {
   const tableDataRows = document.querySelectorAll(".shows__table-data-row");
@@ -84,16 +58,25 @@ function addListItemSelectListener() {
   });
 }
 
+function timestampToMMDDYYYY(timestamp) {
+  const date = new Date(timestamp);
+  const month = date.getMonth();
+  const day = date.getDate();
+  const year = date.getFullYear();
+
+  return `${month}/${day}/${year}`;
+}
+
 function addShowsTableRow(show) {
   const tableRowEl = document.createElement("tr");
   tableRowEl.classList.add("shows__table-data-row");
 
   const showDateEl = document.createElement("td");
   showDateEl.classList.add("shows__table-data-date");
-  showDateEl.innerText = show.date;
+  showDateEl.innerText = timestampToMMDDYYYY(show.date);
 
   const showVenueEl = document.createElement("td");
-  showVenueEl.innerText = show.venue;
+  showVenueEl.innerText = show.place;
 
   const showLocationEl = document.createElement("td");
   showLocationEl.innerText = show.location;
@@ -128,7 +111,7 @@ function addShowsListItem(show) {
   const listItemDateValue = document.createElement("div");
   listItemDateValue.classList.add("shows__item-value");
   listItemDateValue.classList.add("shows__item-date");
-  listItemDateValue.innerText = show.date;
+  listItemDateValue.innerText = timestampToMMDDYYYY(show.date);
 
   listItemDateFieldEl.appendChild(listItemDateLabel);
   listItemDateFieldEl.appendChild(listItemDateValue);
@@ -142,7 +125,7 @@ function addShowsListItem(show) {
 
   const listItemVenueValue = document.createElement("div");
   listItemVenueValue.classList.add("shows__item-value");
-  listItemVenueValue.innerText = show.venue;
+  listItemVenueValue.innerText = show.place;
 
   listItemVenueFieldEl.appendChild(listItemVenueLabel);
   listItemVenueFieldEl.appendChild(listItemVenueValue);
@@ -205,4 +188,9 @@ window.addEventListener("resize", function () {
   renderShows();
 });
 
-renderShows();
+async function init() {
+  shows = await bandSiteApi.getShows();
+  renderShows();
+}
+
+init();
