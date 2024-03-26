@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Bees Knees - Official Band Site</title>
     <link rel="stylesheet" href="./styles/bio.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="./scripts/index-page.js" defer></script>
 </head>
 
@@ -88,15 +89,17 @@
                         <!-- Name -->
                         <div class="comments__input-field">
                             <label class="comments__form-label" for="nameId">Name</label>
-                            <input class="comments__form-input" type="text" name="name" id="nameId" placeholder="Enter your name" />
+                            <input class="comments__form-input" type="text" name="name" id="nameId"
+                                placeholder="Enter your name" />
                         </div>
-    
+
                         <!-- Comment -->
                         <div class="comments__input-field">
                             <label class="comments__form-label" for="commentId">Comment</label>
-                            <textarea class="comments__form-input comments__form-input--textarea" name="comment" id="commentId" placeholder="Add a new comment"></textarea>
+                            <textarea class="comments__form-input comments__form-input--textarea" name="comment"
+                                id="commentId" placeholder="Add a new comment"></textarea>
                         </div>
-    
+
                         <!-- Submit button -->
                         <div class="comments__form-submit">
                             <button type="submit">COMMENT</button>

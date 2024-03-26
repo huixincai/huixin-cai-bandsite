@@ -45,7 +45,7 @@ h2 {
 
 button {
   background-color: #323232;
-  color: #FFFFFF;
+  color: #ffffff;
   height: 40px;
   min-width: 150px;
   border-radius: 4px;
@@ -68,7 +68,7 @@ header .navbar__logo {
   padding: 15px 0;
 }
 header .navbar__logo a {
-  color: #FFFFFF;
+  color: #ffffff;
   text-decoration: none;
 }
 header nav ul {
@@ -80,12 +80,12 @@ header nav ul li {
   height: 35px;
   font-size: 20px;
   font-weight: 600;
-  color: #E1E1E1;
+  color: #e1e1e1;
   text-align: center;
 }
 header nav ul li.navbar--active, header nav ul li:hover {
-  color: #FFFFFF;
-  border-bottom: 4px solid #FFFFFF;
+  color: #ffffff;
+  border-bottom: 4px solid #ffffff;
 }
 header nav ul li a {
   color: inherit;
@@ -153,7 +153,7 @@ section {
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  color: #FFFFFF;
+  color: #ffffff;
   font-size: 38px;
   font-weight: 600;
 }
@@ -181,7 +181,7 @@ section {
 }
 
 .photo {
-  background-color: #E1E1E1;
+  background-color: #e1e1e1;
 }
 .photo img {
   width: 100%;
@@ -189,7 +189,7 @@ section {
 }
 
 .divider {
-  border-top: 1px solid #E1E1E1;
+  border-top: 1px solid #e1e1e1;
   margin: 1rem 0;
 }
 
@@ -221,7 +221,7 @@ section {
   max-width: 36px;
   background-size: cover;
   background-position: top center;
-  background-color: #E1E1E1;
+  background-color: #e1e1e1;
   border-radius: 50%;
 }
 @media (min-width: 768px) {
@@ -244,7 +244,7 @@ section {
 }
 .comments__comment-form .comments__form-input {
   padding: 12px;
-  border: 1px solid #E1E1E1;
+  border: 1px solid #e1e1e1;
   border-radius: 4px;
   font-size: 1rem;
 }
@@ -262,7 +262,7 @@ section {
   border-color: 1px solid #323232;
 }
 .comments__comment-form .comments__form-input--error {
-  border-color: #D22D2D;
+  border-color: #d22d2d;
 }
 .comments__comment-form .comments__form-input--textarea {
   height: 4.5rem;
@@ -281,7 +281,7 @@ section {
   line-height: 20px;
   font-weight: 600;
   margin-bottom: 4px;
-  color: #AFAFAF;
+  color: #afafaf;
 }
 .comments__form-submit {
   padding: 0.5rem 0;
@@ -306,13 +306,13 @@ section {
   line-height: 2rem;
 }
 .comments__comment-header-timestamp {
-  color: #AFAFAF;
+  color: #afafaf;
 }
 
 .footer {
   background-color: #323232;
   padding: 16px 32px;
-  color: #FFFFFF;
+  color: #ffffff;
   display: flex;
   flex-direction: column;
   align-items: baseline;
@@ -344,7 +344,7 @@ section {
 }
 .footer .footer__contact a {
   text-decoration: none;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 .footer .footer__logo {
   font-size: 50px;

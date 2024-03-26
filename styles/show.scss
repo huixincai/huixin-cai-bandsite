@@ -58,7 +58,8 @@ tbody tr {
   border-bottom: 1pt solid $mercury;
 }
 
-td, th {
+td,
+th {
   padding: 24px 18px;
 }
 
@@ -112,7 +113,7 @@ section {
       background-color: $mercury;
     }
   }
-  
+
   @include desktop {
     flex-direction: row;
     font-size: 0.75rem;
@@ -162,7 +163,8 @@ section {
     font-weight: 600;
   }
 
-  &__item-label, &__item-value {
+  &__item-label,
+  &__item-value {
     padding: 4px 0;
   }
 
