@@ -1,48 +1,5 @@
 @use "variables" as *;
 
-@mixin header($padding-side) {
-  @content;
-
-  display: flex;
-  height: 68px;
-  padding: 0 $padding-side;
-
-  .navbar__logo {
-    display: inline-block;
-    font-size: 1.35lh;
-  }
-
-  nav {
-    display: inline-block;
-  }
-
-  nav ul {
-    padding: 0 1lh;
-
-    li {
-      height: 68px;
-      line-height: 64px;
-      margin: 0 0.5lh;
-      font-size: 15px;
-      box-sizing: border-box;
-    }
-  }
-}
-
-@mixin tablet-header {
-  @media screen and (min-width: $tablet-breakpoint) {
-    @content;
-    @include header($tablet-spacing);
-  }
-}
-
-@mixin desktop-header {
-  @media screen and (min-width: $desktop-breakpoint) {
-    @content;
-    @include header($desktop-spacing);
-  }
-}
-
 @mixin content($padding-side) {
   @content;
 
